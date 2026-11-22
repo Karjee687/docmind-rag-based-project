@@ -4,11 +4,11 @@ services:
     container_name: doc-mind-postgres
     restart: unless-stopped
     ports:
-      - "5434:5432"
+      - "${DB_PORT}:5432"
     environment:
-      POSTGRES_DB: docmind
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
 
     volumes:
       - ytpgdata:/var/lib/postgresql/data
